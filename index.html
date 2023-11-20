@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temp Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/0d6b3f8dec.js" crossorigin="anonymous"></script>
+    <script>
+        let celciusInput = document.querySelector('#celcius > input');
+        let farenheitInput = document.querySelector('#farenheit > input');
+        let kelvinInput = document.querySelector('#kelvin > input');
+        
+        let btn = document.querySelector('.button hi');
+        
+        function roundNumber(number)
+        {
+            return Math.round(number*100)/100;
+        
+        }
+        celciusInput.addEventListener('input',function(){
+            let cTemp=parseFloat(celciusInput.value);
+            let fTemp=(cTemp*(9/5))+32;
+            let kTemp=cTemp+273.15;
+        
+            farenheitInput.value=roundNumber(fTemp);
+            kelvinInput.value=roundNumber(kTemp);
+        })
+        </script>
+</head>
+<body>
+    <div class="hey">
+    <div class="container">
+        <div class="box">
+            <i class="fa-solid fa-temperature-three-quarters">Temperature Converter</i>
+            </div>
+            <div class="in">
+            <input type="number" id="celcius"placeholder="°C">
+            <input type="number" id="farenheit"placeholder="°F">
+            <input type="number" id="kelvin" placeholder="K">
+            <button class="hi">Clear</button>
+        </div>
+    </div>
+    </div>
+    
+</body>
+</html>
